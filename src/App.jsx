@@ -68,21 +68,25 @@ function App() {
   return (
     <>
     <div>
-        {
-            learners.map(learner => {
-              return (
-                <div>
-                   <li>{learner.name}</li>
-                   <li>{learner.bio}</li>
-                  <br />
-                </div>
-                )
-            })
-          }
-          
+      {
+        learners.map((learner) => (
+            <div>
+                <p>{learner.name}</p>
+                <p>{learner.bio}</p>
+                <ul>
+                  {learner.scores.map((score) => (
+                    <div>
+                        <li>{score.score} | {score.date}</li>
+
+                    </div>
+                  ))}
+                </ul>
+              <br />
+            </div>
+            ))}   
     </div>
 
-      </>
+  </>
 
    
   );
